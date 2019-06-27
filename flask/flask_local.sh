@@ -157,14 +157,16 @@ do
   esac
 done
 
+# Run the app
+if [ "${@:$OPTIND}" == "run" ] || [ "$1" == "run" ];
+then
+  flask run
+fi;
+
 # If no arguments option are passed
 if [[ "${OPTIND}" -eq "1" ]]
 then
   usage;
 fi;
+echo $1
 
-# Run the app
-if [[ "${@:$OPTIND}" == "run" ]];
-then
-  flask run
-fi;
