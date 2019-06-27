@@ -63,11 +63,11 @@ function start_db_service() {
     then
         if [[ "$(service $1 status|grep running|wc -l)" -eq "0" ]]
         then
-            echo -n " * Starting $1 service";
+            echo -n "Starting $1 service";
             service mysql start;
             echo " [Done]"
         else
-            echo " * Service $1 already running";
+            echo "Service $1 already running";
         fi;
     fi;
 }
