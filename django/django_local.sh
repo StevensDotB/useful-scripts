@@ -119,6 +119,16 @@ function install_new_packages() {
   echo
 }
 
+# Make migrations by an app or in general
+function make_migrations() {
+  if [[ "$1" == "all" ]];
+  then
+    ./manage.py makemigrations
+  else
+    ./manage.py makemigrations ${1}
+  fi;
+}
+
 # Parameters 
 OPTIND=1;
 while getopts "e:d:hurim" opt;
@@ -140,7 +150,7 @@ do
       update_project
       ;;
     m) # makemigrations and migrate changes to the database
-      ./manage.py makemigrations
+      ./manage.py makemigrations ${OPTARG}
       ./manage.py migrate
       ;;
     :)
