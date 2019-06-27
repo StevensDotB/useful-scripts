@@ -106,7 +106,7 @@ function install_new_packages() {
   if [[ "$answer" =~ [Yy] ]];
   then
     echo " [Installing]"
-    pip install -r ../requirements.txt
+    pip install -r requirements.txt
   elif [[ "$answer" =~ [Nn] ]];
   then
     echo " [Skiped]"
