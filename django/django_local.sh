@@ -171,6 +171,12 @@ do
   esac
 done
 
+# If no arguments option are passed
+if [[ "${OPTIND}" -eq "1" ]]
+then
+  usage;
+fi;
+
 # Run the app
 if [[ "${@:$OPTIND}" == "runserver" ]];
 then
