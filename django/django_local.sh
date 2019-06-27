@@ -25,11 +25,12 @@ function usage() {
     echo "   Activate the virtualenv                               ./django_local.sh -e venv/path"
     echo "   Start database service                                ./django_local.sh -d mysql "
     echo "   Install all packages from requirements.txt            ./django_local.sh -r"
-    echo "   Apply makemigrations and migrate:                     ./django_local.sh -m"
+    echo "   Apply makemigrations and migrate for all:             ./django_local.sh -m all"
+    echo "   Apply makemigrations and migrate for an app:          ./django_local.sh -m myapp"
     echo "   Git pull to update the project:                       ./django_local.sh -e venv/path -u"
     echo "   Git pull, makemigrations and migrate                  ./django_local.sh -e venv/path -um"
     echo
-    echo "   All together:                                         ./django_local.sh -e venv/path -um -d mysql run"
+    echo "   All together:                                         ./django_local.sh -e venv/path -u -m all -d mysql run"
     echo
     echo "Notes:"
     echo " 1. To run the server after use flag options use the positional argument 'runserver' or 'runsslserver at the end"
@@ -134,7 +135,7 @@ function make_migrations() {
 
 # Parameters 
 OPTIND=1;
-while getopts "e:d:hurim" opt;
+while getopts "e:d:m:hur" opt;
 do
   case $opt in
     h)
