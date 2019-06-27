@@ -67,8 +67,9 @@ function start_db_service() {
     then
         if [[ "$(service $1 status|grep running|wc -l)" -eq "0" ]]
         then
-            echo " * Starting $1 service";
+            echo -n " * Starting $1 service";
             service mysql start;
+            echo " [Done]"
         else
             echo " * Service $1 already running";
         fi;
@@ -83,8 +84,9 @@ function activate_venv() {
     else
         VPATH="$1/bin/activate"
     fi;
-    echo " * Activate virtual environment $VPATH";
+    echo -n " * Activate virtual environment $VPATH";
     source $VPATH
+    echo " [Done]";
 }
 
 function update_project() {
@@ -103,7 +105,7 @@ function install_new_packages() {
 
   if [[ "$answer" =~ [Yy] ]];
   then
-    echo " [Installing]..."
+    echo " [Installing]"
     pip install -r ../requirements.txt
   elif [[ "$answer" =~ [Nn] ]];
   then
