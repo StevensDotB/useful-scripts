@@ -158,7 +158,7 @@ do
 done
 
 # Run the app
-if [ "${@:$OPTIND}" == "run" ] || [ "$1" == "run" ];
+if [[ "${@:$OPTIND}" == "run" ]] || [[ "$1" == "run" ]];
 then
   flask run
 fi;
