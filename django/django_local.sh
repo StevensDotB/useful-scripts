@@ -170,13 +170,12 @@ do
     *) usage ;;
   esac
 done
-
 # Run the app
-if [ "${@:$OPTIND}" == "runserver" ] || [ "$1" == "runserver" ];
+if [[ "${@:$OPTIND}" == "runserver" ]] || [[ "$1" == "runserver" ]];
 then
   ./manage.py runserver
 fi;
-if [ "${@:$OPTIND}" == "runsslserver" ] || [ "$1" == "runsslserver" ];
+if [[ "${@:$OPTIND}" == "runsslserver" ]] || [[ "$1" == "runsslserver" ]];
 then
   if [[ "$(cat requirements.txt | grep django-sslserver | wc -l)" -eq "0" ]];
   then
