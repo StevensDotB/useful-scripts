@@ -156,11 +156,18 @@ do
     *) usage ;;
   esac
 done
+# echo $1 ${OPTIND}; exit 1
+if [[ "$1" == "shell" ]];
+then
+  flask shell
+  exit 1;
+fi;
 
 # Run the app
 if [[ "${@:$OPTIND}" == "run" ]] || [[ "$1" == "run" ]];
 then
   flask run
+  exit 1;
 fi;
 
 # If no arguments option are passed
@@ -168,5 +175,4 @@ if [[ "${OPTIND}" -eq "1" ]]
 then
   usage;
 fi;
-echo $1
 
