@@ -28,7 +28,7 @@ function usage() {
     echo "   Apply makemigrations and migrate for all:             django_local -m all"
     echo "   Apply makemigrations and migrate for an app:          django_local -m myapp"
     echo "   Git pull to update the project:                       django_local -e venv/path -u"
-    echo "   Git pull, makemigrations and migrate                  django_local -e venv/path -um"
+    echo "   Git pull, makemigrations and migrate                  django_local -e venv/path -u -m"
     echo
     echo "   All together:                                         django_local -e venv/path -u -m all -d mysql run"
     echo
