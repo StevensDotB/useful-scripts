@@ -49,11 +49,13 @@ function usage() {
     echo
     echo " 2. -d flag argument can be use for any database service, such as mysql, postgres, mongodb, etc."
     echo
-    echo " 3. To install requirements packages over the virtualenv, the -e option has to be specified."
-    echo "    As the packages installation is executed when -u is used the -e option has to be specified as well"
+    echo " 3. To install requirements packages over the virtualenv, the -e option has to be specified if virtualenv is not activated."
+    echo
+    echo " 4. As the packages installation is executed when -u is used, the -e option has to be specified as well if the virtualenv"
+    echo "    is not activated."
     echo "       e.g: flask_local -e ../venv/ -r"
     echo
-    echo " 4. When you apply the -u option, the program asks for new packages installation, so, it is not recommended to"
+    echo " 5. When you apply the -u option, the program asks for new packages installation, so, it is not recommended to"
     echo "    apply the -r option, since the program might ask for packages installation twice"
     echo "       e.g: "
     echo "         - flask_local -e ../venv/ -u   [ Yes ]" 
