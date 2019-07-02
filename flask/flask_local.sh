@@ -25,22 +25,24 @@ function usage() {
     echo
     echo "Positional Argument:"
     echo "   run                        Run the server"
+    echo "   shell                      Enter to Flask shell"
     echo
     echo "Examples:"
-    echo "   Activate the virtualenv                               ./flask_local.sh -e venv/path"
-    echo "   Start database service                                ./flask_local.sh -d mysql "
-    echo "   Install all packages from requirements.txt            ./flask_local.sh -r"
-    echo "   flask db init:                                        ./flask_local.sh -i"
-    echo "   flask db migrate and upgrade:                         ./flask_local.sh -m"
-    echo "   flask db init, migrate and upgrade:                   ./flask_local.sh -im"
-    echo "   Git pull to update the project:                       ./flask_local.sh -e venv/path -u"
-    echo "   Git pull, flask db init, migrate and upgrade:         ./flask_local.sh -e venv/path -uim"
+    echo "   Activate the virtualenv                               flask_local -e venv/path"
+    echo "   Start database service                                flask_local -d mysql "
+    echo "   Install all packages from requirements.txt            flask_local -r"
+    echo "   flask db init:                                        flask_local -i"
+    echo "   flask db migrate and upgrade:                         flask_local -m"
+    echo "   flask db init, migrate and upgrade:                   flask_local -im"
+    echo "   Git pull to update the project:                       flask_local -e venv/path -u"
+    echo "   Git pull, flask db init, migrate and upgrade:         flask_local -e venv/path -uim"
+    echo "   flask shell:                                          flask_local shell"
     echo
-    echo "   All together:                                         ./flask_local.sh -e venv/path -uim -d mysql run"
+    echo "   All together:                                         flask_local -e venv/path -uim -d mysql run"
     echo
     echo "Notes:"
     echo " 1. To run the server after use flag options use the positional argument 'run' at the end"
-    echo "       e.g: ./flask_local.sh -e venv/path -d mysql run"
+    echo "       e.g: flask_local -e venv/path -d mysql run"
     echo
     echo "    Keep in mind that you can not run the server if you do not have flask installed on your server"
     echo "    or on your virtualenv (user -e option to activate it)"
@@ -49,13 +51,13 @@ function usage() {
     echo
     echo " 3. To install requirements packages over the virtualenv, the -e option has to be specified."
     echo "    As the packages installation is executed when -u is used the -e option has to be specified as well"
-    echo "       e.g: ./flask_local.sh -e ../venv/ -r"
+    echo "       e.g: flask_local -e ../venv/ -r"
     echo
     echo " 4. When you apply the -u option, the program asks for new packages installation, so, it is not recommended to"
     echo "    apply the -r option, since the program might ask for packages installation twice"
     echo "       e.g: "
-    echo "         - ./flask_local.sh -e ../venv/ -u   [ Yes ]" 
-    echo "         - ./flask_local.sh -e ../venv/ -ur  [ No ]" 
+    echo "         - flask_local -e ../venv/ -u   [ Yes ]" 
+    echo "         - flask_local -e ../venv/ -ur  [ No ]" 
     echo
 
     exit 1
