@@ -174,6 +174,7 @@ done
 if [[ "${@:$OPTIND}" == "runserver" ]] || [[ "$1" == "runserver" ]];
 then
   ./manage.py runserver
+  exit 1;
 fi;
 if [[ "${@:$OPTIND}" == "runsslserver" ]] || [[ "$1" == "runsslserver" ]];
 then
@@ -184,6 +185,7 @@ then
     install_new_packages django-sslserver
   fi;
   ./manage.py runsslserver
+  exit 1;
 fi;
 
 # If no arguments option are passed
