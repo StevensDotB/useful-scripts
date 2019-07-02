@@ -16,12 +16,12 @@ function usage() {
     echo "Usage: $(basename $0) [option [argument]] [run]" >&2
     echo 
     echo "Flag options:"
-    echo "   -e <venv-path>             Activate the virtualenv"
+    echo "   -e [venv-path]             Activate the virtualenv"
     echo "   -r                         Apply 'pip install' packages installation from requirement.txt file"
     echo "   -u                         Make a git pull to update your project with latest changes"
     echo "   -i                         Init alembic migration"
     echo "   -m                         Migrate and upgrade changes to the database"
-    echo "   -d <database-service>      Start the database service"
+    echo "   -d [database-service]      Start the database service"
     echo
     echo "Positional Argument:"
     echo "   run                        Run the server"

@@ -22,19 +22,19 @@ function usage() {
     echo "   runsslserver                     Run the SSL Server"
     echo
     echo "Examples:"
-    echo "   Activate the virtualenv                               ./django_local.sh -e venv/path"
-    echo "   Start database service                                ./django_local.sh -d mysql "
-    echo "   Install all packages from requirements.txt            ./django_local.sh -r"
-    echo "   Apply makemigrations and migrate for all:             ./django_local.sh -m all"
-    echo "   Apply makemigrations and migrate for an app:          ./django_local.sh -m myapp"
-    echo "   Git pull to update the project:                       ./django_local.sh -e venv/path -u"
-    echo "   Git pull, makemigrations and migrate                  ./django_local.sh -e venv/path -um"
+    echo "   Activate the virtualenv                               django_local -e venv/path"
+    echo "   Start database service                                django_local -d mysql "
+    echo "   Install all packages from requirements.txt            django_local -r"
+    echo "   Apply makemigrations and migrate for all:             django_local -m all"
+    echo "   Apply makemigrations and migrate for an app:          django_local -m myapp"
+    echo "   Git pull to update the project:                       django_local -e venv/path -u"
+    echo "   Git pull, makemigrations and migrate                  django_local -e venv/path -um"
     echo
-    echo "   All together:                                         ./django_local.sh -e venv/path -u -m all -d mysql run"
+    echo "   All together:                                         django_local -e venv/path -u -m all -d mysql run"
     echo
     echo "Notes:"
     echo " 1. To run the server after use flag options use the positional argument 'runserver' or 'runsslserver at the end"
-    echo "       e.g: ./django_local.sh -e venv/path -d mysql runserver"
+    echo "       e.g: django_local -e venv/path -d mysql runserver"
     echo
     echo "    Keep in mind that you can not run the server if you do not have Django installed on your server"
     echo "    or on your virtualenv (user -e option to activate it)"
@@ -45,13 +45,13 @@ function usage() {
     echo
     echo " 4. As the packages installation is executed when -u is used, the -e option has to be specified as well if the virtualenv"
     echo "    is not activated."
-    echo "       e.g: ./django_local.sh -e ../venv/ -r"
+    echo "       e.g: django_local -e ../venv/ -r"
     echo
     echo " 5. When you apply the -u option, the program asks for new packages installation, so, it is not recommended to"
     echo "    apply the -r option, since the program might ask for packages installation twice"
     echo "       e.g: "
-    echo "         - ./django_local.sh -e ../venv/ -u   [ Yes ]"
-    echo "         - ./django_local.sh -e ../venv/ -ur  [ No ]"
+    echo "         - django_local -e ../venv/ -u   [ Yes ]"
+    echo "         - django_local -e ../venv/ -ur  [ No ]"
     echo
 
     exit 1
