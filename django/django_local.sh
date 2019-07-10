@@ -20,6 +20,7 @@ function usage() {
     echo "Positional Arguments:"
     echo "   runserver                        Run the Server"
     echo "   runsslserver                     Run the SSL Server"
+    echo "   shell                            Open python interactive shell"
     echo
     echo "Examples:"
     echo "   Activate the virtualenv                               django_local -e venv/path"
@@ -30,7 +31,7 @@ function usage() {
     echo "   Git pull to update the project:                       django_local -e venv/path -u"
     echo "   Git pull, makemigrations and migrate                  django_local -e venv/path -u -m"
     echo
-    echo "   All together:                                         django_local -e venv/path -u -m all -d mysql run"
+    echo "   All together:                                         django_local -e venv/path -u -m all -d mysql runserver"
     echo
     echo "Notes:"
     echo " 1. To run the server after use flag options use the positional argument 'runserver' or 'runsslserver at the end"
@@ -170,6 +171,13 @@ do
     *) usage ;;
   esac
 done
+
+# Open python interactive shell
+if [[ "$1" == "shell" ]];
+then
+  ./manage.py shell
+  exit 1;
+fi;
 # Run the app
 if [[ "${@:$OPTIND}" == "runserver" ]] || [[ "$1" == "runserver" ]];
 then

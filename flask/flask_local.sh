@@ -25,7 +25,7 @@ function usage() {
     echo
     echo "Positional Argument:"
     echo "   run                        Run the server"
-    echo "   shell                      Enter to Flask shell"
+    echo "   shell                      Open python interactive shell"
     echo
     echo "Examples:"
     echo "   Activate the virtualenv                               flask_local -e venv/path"
