@@ -1,5 +1,7 @@
 # useful-scripts
-Scripts that optimize the steps and processes for development
+Scripts that optimize the steps and processes for development.
+_Feel free to add your process automation scripts. Let's do it together._
+
 
 ### Create alias for bash scripts
 
