@@ -136,6 +136,17 @@ function make_migrations() {
   ./manage.py migrate
 }
 
+# Make migrations by an app or in general
+function apply_unittest() {
+  if [[ "$2" == "" ]];
+  then
+    ./manage.py test
+  else
+    ./manage.py test $2
+  fi;
+  exit 1;
+}
+echo "Positional argument" $OPTARG
 # Parameters 
 OPTIND=1;
 while getopts "e:d:m:hur" opt;
@@ -184,13 +195,11 @@ then
   ./manage.py shell
   exit 1;
 fi;
-# Run unittest
+# Open python interactive shell
 if [[ "$1" == "test" ]];
 then
-  ./manage.py test
-  exit 1;
+  apply_unittest test
 fi;
-
 # Run the app
 if [[ "${@:$OPTIND}" == "runserver" ]] || [[ "$1" == "runserver" ]];
 then
