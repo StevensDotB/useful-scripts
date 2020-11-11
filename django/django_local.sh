@@ -20,7 +20,9 @@ function usage() {
     echo "Positional Arguments:"
     echo "   runserver                        Run the Server"
     echo "   runsslserver                     Run the SSL Server"
+    echo "   createsuperuser                  Create super user admin"
     echo "   shell                            Open python interactive shell"
+    echo "   test                             Apply 'test' parameter for unit testing"
     echo
     echo "Examples:"
     echo "   Activate the virtualenv                               django_local -e venv/path"
