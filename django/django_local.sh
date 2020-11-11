@@ -172,12 +172,25 @@ do
   esac
 done
 
+# createsuperuser
+if [[ "$1" == "createsuperuser" ]];
+then
+  ./manage.py createsuperuser
+  exit 1;
+fi;
 # Open python interactive shell
 if [[ "$1" == "shell" ]];
 then
   ./manage.py shell
   exit 1;
 fi;
+# Run unittest
+if [[ "$1" == "test" ]];
+then
+  ./manage.py test
+  exit 1;
+fi;
+
 # Run the app
 if [[ "${@:$OPTIND}" == "runserver" ]] || [[ "$1" == "runserver" ]];
 then
